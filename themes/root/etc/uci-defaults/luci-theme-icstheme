@@ -1,0 +1,6 @@
+	#!/bin/sh
+	uci batch <<-EOF
+	        set luci.themes.MyTheme=/luci-static/icstheme
+	        commit luci
+	EOF
+exit 0
