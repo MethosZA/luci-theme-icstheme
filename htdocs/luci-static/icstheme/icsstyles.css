@@ -456,18 +456,22 @@ textarea {
 
 .cbi-value {
     margin-bottom: 7%;
+    display: flex;
+    gap: 10%;
+    align-items: center;
 }
 
 .cbi-value-field {
     margin-left: 20px;
-    flex: 1
+    width: 40vw;
+    flex: 1;
 }
 
 .cbi-value label.cbi-value-title {
     padding-top: 6px;
     font-size: 13px;
     line-height: 18px;
-    /* flex: 0 0 180px; */
+    flex: 0 0 180px;
     text-align: right;
     color: var(--text-color-high)
 }
@@ -1439,17 +1443,19 @@ body.modal-overlay-active #modal_overlay {
 .btn,
 .cbi-button {
     --default-btn-background: #e4e4e4;
-    --on-color: var(--text-color-high);
+    /* --on-color:
+    var(--text-color-high); */
     cursor: pointer;
     display: inline-block;
     background: var(--default-btn-background);
     color: var(--on-color);
     font-size: 13px;
     line-height: 2em;
-    border: 1px solid var(--border-color-high);
-    border-radius: 4px;
+    border: 1px solid #d3d3d3 !important;
+    border-radius: 5px;
     white-space: pre;
-    padding: 0 14px
+    padding: 0 14px;
+    /* filter: drop-shadow(1px 1px 1px #666999); */
 }
 
 .cbi-input-invalid,
