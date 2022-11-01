@@ -372,7 +372,7 @@ dl dd {
 hr {
     border: 0;
     border-bottom: 1px solid var(--border-color-low);
-    margin: 20px 0 19px
+    /* margin: 20px 0 19px; */
 }
 
 strong {
@@ -454,9 +454,7 @@ textarea {
 }
 
 .cbi-value {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 18px
+    margin-bottom: 7%;
 }
 
 .cbi-value-field {
@@ -468,7 +466,7 @@ textarea {
     padding-top: 6px;
     font-size: 13px;
     line-height: 18px;
-    flex: 0 0 180px;
+    /* flex: 0 0 180px; */
     text-align: right;
     color: var(--text-color-high)
 }
@@ -1322,12 +1320,22 @@ footer ul.breadcrumb {
     position: fixed;
     top: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background-image: url("https://github.com/rachel-rebecca/ics-icons/blob/main/NeoWiVI_Thumbnail.png?raw=true");
+    box-shadow: inset 0 0 0 1000px rgb(12 50 75 / 87%);
+  background-repeat: no-repeat; 
+  background-size: cover; 
     z-index: 900;
     overflow: auto;
     transition: opacity .125s ease-in;
     opacity: 0;
     visibility: hidden
+}
+
+#modal_overlay>.modal.login>form>.cbi-section>.cbi-section-node>.cbi-value {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 1%;
 }
 
 .modal {
@@ -1340,13 +1348,21 @@ footer ul.breadcrumb {
     box-shadow: 0 0 3px var(--background-color-low);
     min-width: 270px;
     margin: 5em auto;
-    padding: 1em 1em .5em
+    padding: 1em 1em .5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .modal>* {
     line-height: normal;
     margin-bottom: .5em;
     max-width: 100%
+}
+
+.modal>h4{
+    text-align: center;
+    margin: 1.25em;
 }
 
 .modal>pre,
@@ -2269,7 +2285,15 @@ div.cbi-value var.cbi-tooltip-container,
 #modal_overlay>.modal.login>button.important {
     font-size: 120% !important;
     margin-top: .5em;
-    width: 100%
+    width: 90%;
+    min-width: 15em;
+    background: #2ea4f2;
+    color: #fff;
+}
+
+#modal_overlay>.modal.login>form>.cbi-section {
+    border: none !important;
+    filter: none !important;
 }
 
 .uci-change-list {
