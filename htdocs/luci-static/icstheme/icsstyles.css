@@ -226,11 +226,11 @@ body {
 }
 
 .container {
-    width: 100%;
-    max-width: 940px;
-    margin-left: auto;
-    margin-right: auto;
-    zoom: 1
+    width: 100vw;
+    /* max-width: 940px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    zoom: 1;
 }
 
 a {
@@ -298,6 +298,7 @@ h2 {
     font-size: 24px;
     line-height: 36px;
     text-align: center;
+    /* border-top: solid 1.5px #e4e4e4; */
 }
 
 h3,
@@ -875,15 +876,17 @@ textarea[readonly] {
 header {
     position: sticky;
     top: 0;
+    right: 0;
     z-index: 800;
     overflow: visible;
     color: #404040;
     display: flex;
     background: linear-gradient(rgb(46, 163, 242), #1c7dbe);
     box-shadow: 0 1px 3px hsla(var(--border-color-low-hsl), .25), inset 0 -1px 0 hsla(var(--border-color-low-hsl), .01);
-    margin: -5px -5px 15px;
-    padding: 0 calc((100% - 940px) / 2) 0 calc((100% - 940px) / 2);
+    /* margin: -5px -5px 15px; */
+    /* padding: 0 calc((100% - 940px) / 2) 0 calc((100% - 940px) / 2); */
     height: 8vh;
+    width: 100%;
     display: flex;
     align-items: center;
 }
@@ -1128,10 +1131,11 @@ a.menu:after {
 .cbi-tabmenu {
     display: flex;
     flex-wrap: nowrap;
-    background: linear-gradient(var(--tab-bar-background-color) 28px, var(--tab-inactive-border-color) 28px);
-    width: 100%;
-    gap:5px;
-    margin-left: 1em;
+    /* background: #cbcbcb; */
+    /* width: 100vw; */
+    /* gap:5px; */
+    margin-top: 1em;
+    border-bottom: solid 1.5px #e4e4e4;
 }
 
 .tabs>li,
@@ -1146,6 +1150,7 @@ a.menu:after {
     border-bottom: none;
     border-radius: 4px 4px 0 0;
     color: var(--primary-color-high);
+    margin: 1em 0 0 1em;
 }
 
 .tabs>li>a,
