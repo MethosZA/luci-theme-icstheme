@@ -812,6 +812,9 @@ textarea[readonly] {
 
 #cbi-network-interface {
     padding: 1% 0;
+    margin: 2% auto;
+    width: fit-content;
+    max-width: 700px;
 }
 
 .tr {
