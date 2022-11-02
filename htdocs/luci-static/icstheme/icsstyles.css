@@ -753,13 +753,14 @@ textarea[readonly] {
 
 .cbi-optionals,
 .cbi-section-create {
-    padding: 0 0 10px 10px
+    padding: 0 10px;
 }
 
 .cbi-section-create {
     display: inline-flex;
-    align-items: center;
-    margin: -3px
+    align-content: center;
+    margin: -3px;
+    /* width: 100%; */
 }
 
 .cbi-section-create>* {
@@ -803,6 +804,14 @@ textarea[readonly] {
     border-radius: 5px;
     filter: drop-shadow(3px 4px 4px #8d8d8d);
     padding: 1%
+}
+
+.cbi-section.fade-in {
+    padding: 0;
+}
+
+#cbi-network-interface {
+    padding: 1% 0;
 }
 
 .tr {
