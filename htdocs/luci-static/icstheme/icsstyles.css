@@ -450,7 +450,7 @@ textarea {
 }
 
 .cbi-value {
-    margin-bottom: 7%;
+    margin-bottom: 3%;
     display: flex;
     gap: 10%;
     align-items: center;
@@ -1461,6 +1461,11 @@ body.modal-overlay-active #modal_overlay {
 
 #radio0 {
     margin-left: 5%;
+}
+
+#cbi-wivi > div:nth-child(3) > div.right > button:nth-child(2){
+margin-right: 5%;
+    
 }
 
 .cbi-input-invalid,
@@ -2559,8 +2564,9 @@ h5 {
 }
 
 h3 {
-    margin-left: 8px;
+    /* margin-left: 8px; */
     text-align: center;
+    margin-bottom: 2%;
 }
 
 .cbi-value>.cbi-section,
