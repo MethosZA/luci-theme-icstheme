@@ -221,7 +221,7 @@ body {
     color: var(--text-color-high);
     min-height: 100%;
     width: 100%;
-    display: grid;
+    display: flex;
     flex-direction: column;
 }
 
@@ -295,6 +295,7 @@ h2 {
     font-size: 24px;
     line-height: 36px;
     text-align: center;
+    margin-top: 2%;
 }
 
 h3,
