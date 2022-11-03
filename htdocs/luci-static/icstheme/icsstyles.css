@@ -1469,6 +1469,10 @@ margin-right: 5%;
     
 }
 
+.control-group>button {
+    margin-top: 2%;
+}
+
 .cbi-input-invalid,
 .cbi-input-invalid.cbi-dropdown:not(.btn):not(.cbi-button),
 .cbi-input-invalid.cbi-dropdown:not([open])>ul>li,
@@ -2683,7 +2687,8 @@ select+.cbi-button,
     height: auto;
     opacity: 1;
     overflow: visible;
-    transition: opacity .25s ease-in
+    transition: opacity .25s ease-in;
+    margin-top: 2%;
 }
 
 @media only screen and (min-width: 600px) {
