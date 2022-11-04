@@ -22,6 +22,7 @@ http.prepare_content("text/html")
     <link rel="stylesheet" href="<%=media%>/icsstyles.css">
     <script src="<%=url('admin/translations', luci.i18n.context.lang)%><%# ?v=PKG_VERSION %>"></script>
     <script src="<%=resource%>/cbi.js"></script>
+    <script type="text/javascript" src="<%=resource%>/xhr.js"></script>
 </head>
 
 <body class="lang_<%=luci.i18n.context.lang%> <% if node then %><%= striptags( node.title ) %><%- end %>" data-page="<%= pcdata(table.concat(disp.context.requestpath, "-")) %>">
