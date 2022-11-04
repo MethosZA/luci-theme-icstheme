@@ -2648,7 +2648,11 @@ select+.cbi-button,
     display: none
 }
 
-.modal.alert-message,
+
+span[data-indicator="poll-status"]{
+    background: #e9e9e9 !important;
+}
+
 .cbi-button-neutral,
 .cbi-button-download,
 .cbi-button-find,
