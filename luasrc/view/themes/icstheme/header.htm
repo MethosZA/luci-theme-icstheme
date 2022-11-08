@@ -28,7 +28,7 @@ http.prepare_content("text/html")
 <body class="lang_<%=luci.i18n.context.lang%> <% if node then %><%= striptags( node.title ) %><%- end %>" data-page="<%= pcdata(table.concat(disp.context.requestpath, "-")) %>">
     <% if not blank_page then %>
     <header>
-        <a class="brand" href="/"><img src="<%=media%>/IntrepidCS-Website.png" alt="Intrepid Control Systems logo"/></a>
+        <a class="brand" href="/"><img id="brand-img" src="<%=media%>/IntrepidCS-Website.png" alt="Intrepid Control Systems logo"/></a>
         <ul class="nav" id="topmenu" style="display:none"></ul>
         <div id="indicators" class="pull-right"></div>
     </header>
