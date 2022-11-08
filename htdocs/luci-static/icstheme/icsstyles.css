@@ -257,7 +257,16 @@ p,
     font-size: 13px;
     font-weight: 400;
     line-height: 18px;
-    margin: 1.5em;
+    /* margin: 0 10%; */
+}
+
+.cbi-map-descr {
+    margin: 0 3%;
+}
+
+.cbi-section-descr {
+        text-align: center;
+    margin: 0 10%
 }
 
 p small {
@@ -454,8 +463,9 @@ textarea {
 .cbi-value {
     margin-bottom: 3%;
     display: flex;
-    gap: 10%;
+    /* gap: 10%; */
     align-items: center;
+    /* justify-content: center; */
 }
 
 .cbi-value-field {
@@ -465,10 +475,10 @@ textarea {
 }
 
 .cbi-value label.cbi-value-title {
-    padding-top: 6px;
+    /* padding-top: 6px; */
     font-size: 13px;
     line-height: 18px;
-    flex: 0 0 180px;
+    flex: .85 1;
     text-align: right;
     color: var(--text-color-high)
 }
@@ -504,7 +514,7 @@ select,
 
 .cbi-dropdown:not(.btn):not(.cbi-button),
 .cbi-dynlist {
-    min-width: 210px;
+    min-width: 18em;
     max-width: 400px;
     width: auto
 }
@@ -806,10 +816,12 @@ textarea[readonly] {
     border-radius: 5px;
     filter: drop-shadow(3px 4px 4px #8d8d8d);
     padding: 1%;
+    /* min-width: fit-content; */
 }
 
 .cbi-section.fade-in {
     padding: 0;
+    /* width: 100%; */
 }
 
 #cbi-network-interface {
@@ -820,7 +832,10 @@ textarea[readonly] {
 }
 
 .tr {
-    display: table-row
+    /* display: inline-flex; */
+    /* width: 40%; */
+    /* flex-direction: column; */
+    /* align-items: center; */
 }
 
 .table[width="33%"],
@@ -841,33 +856,14 @@ textarea[readonly] {
 
 .table .th,
 .table .td {
-    display: table-cell;
-    line-height: 18px;
-    padding: 10px 10px 9px;
+    /* display: table-cell; */
+    /* line-height: 18px; */
+    padding: 1%;
 }
 
 .table .tr:first-child .th {
-    padding-top: 9px;
     font-weight: 700;
     vertical-align: top
-}
-
-.table .td,
-.table .th {
-    /* border-top: 1px solid var(--border-color-medium); */
-}
-
-.tr.placeholder {
-    height: calc(3em + 20px)
-}
-
-.tr.placeholder>.td {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    line-height: 3em
 }
 
 .tr.drag-over-above,
@@ -882,7 +878,7 @@ textarea[readonly] {
 
 .tr:nth-child(odd) {
     background: #e4e4e4;
-    width: 100%;
+    /* width: 40%; */
 }
 
 header {
@@ -915,26 +911,18 @@ header ul .active>a {
 
 header > .brand {
     display: block;
-    /* margin: 5px 15px;
-    color: rgb(0 0 0 / 0%);
-    padding: 8px 20px 12px; */
-    /* background-image: url(https://www.intrepidcs.com/wp-content/uploads/2019/06/IntrepidCS-Website.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    margin: 5px 15px;
     width: 17%;
-    min-width: 151px; */
-
+    min-width: 151px;
 }
 
 #topmenu {
-    position: absolute; 
-    left: 250;
+    position: absolute;
+    left: 18em;
 }
 
 #brand-img {
     width: 12em;
-    position: absolute;
-    left: 20;
     top: 5;
     margin: .5em;
 }
@@ -1016,10 +1004,6 @@ header p {
 
 .nav {
     display: block;
-    float: left;
-    position: relative;
-    left: 0;
-    margin: 0 10px 0 0
 }
 
 .nav>li {
@@ -1141,6 +1125,7 @@ a.menu:after {
     flex-wrap: nowrap;
     margin-top: 1em;
     border-bottom: solid 1.5px #e4e4e4;
+    /* width: 80%; */
 }
 
 .tabs>li,
@@ -1149,13 +1134,14 @@ a.menu:after {
     display: flex;
     align-items: center;
     height: 25px;
-    max-width: 48%;
+    max-width: 30%;
     background: #fff;
     border: 1.5px solid #e4e4e4;
     border-bottom: none;
     border-radius: 4px 4px 0 0;
     color: var(--primary-color-high);
     margin: 1em 0 0 1em;
+    /* flex-wrap: inherit; */
 }
 
 .tabs>li>a,
@@ -1386,6 +1372,16 @@ body[data-page=""]>#modal_overlay {
     width: 100%
 }
 
+.modal>form>.cbi-section
+{
+    background: none;
+}
+
+.cbi-modal>#cbi-wireless>.cbi-section {
+    border: none !important;
+    filter: none !Important;
+}
+
 body.modal-overlay-active {
     overflow: hidden;
     height: 100vh
@@ -1458,7 +1454,7 @@ body.modal-overlay-active #modal_overlay {
     border-radius: 5px;
     white-space: pre;
     padding: 0 14px;
-    margin: auto;
+    margin: 0 1em;
 }
 
 #radio0 {
@@ -1723,11 +1719,11 @@ select+.cbi-button,
     border-radius: 0 3px 3px 0;
     margin-left: -2px;
     vertical-align: top;
-    height: 30px;
+    height: 28px;
     font-size: 14px;
     line-height: 28px;
-    border-color: var(--border-color-high);
-    padding: 0 6px
+    border-color: #8d8d8d !important;
+    padding: 0 6px;
 }
 
 .cbi-title-ref {
@@ -2043,7 +2039,7 @@ form.inline {
 }
 
 .middle {
-    vertical-align: middle !important
+    vertical-align: middle !important;
 }
 
 .bottom {
@@ -2052,7 +2048,7 @@ form.inline {
 
 table table td,
 .cbi-value-field table td {
-    border: none
+    border: none;
 }
 
 .table.cbi-section-table input[type="password"],
@@ -2077,7 +2073,7 @@ table table td,
 .td.cbi-section-actions {
     text-align: right;
     vertical-align: middle;
-    width: 15%
+    width: 10%;
 }
 
 .td.cbi-section-actions> :not(.cbi-dropdown)>*,
@@ -2107,7 +2103,7 @@ th[data-sort-direction="desc"]::after {
 
 .cbi-value-description {
     position: relative;
-    margin: .25em 0 0 1.25em
+    margin: .25em 0 0 1.25em;
 }
 
 .cbi-value-description:not(:empty)::before {
@@ -2211,14 +2207,17 @@ th[data-sort-direction="desc"]::after {
 
 .network-status-table .ifacebox {
     flex-grow: 1;
-    margin: .5em
+    margin: .5em;
 }
 
-.network-status-table .ifacebox-body {
+.ifacebox-body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    text-align: left
+    text-align: left;
+  align-items: center;
+    gap: 1%;
+    justify-content: center;
 }
 
 .network-status-table .ifacebox-body>* {
@@ -2247,7 +2246,7 @@ th[data-sort-direction="desc"]::after {
     flex: 1;
     min-width: 220px;
     margin: .125em;
-    padding: .25em
+    padding: .25em 1.5em
 }
 
 .ifacebadge.large {
@@ -2701,9 +2700,9 @@ span[data-indicator="poll-status"]{
 
 @media only screen and (min-width: 600px) {
     .cbi-section{
-        min-width: 80%;
+        min-width: min-content;
         max-width: 90vw;
-        width: fit-content;
+        width: 90%;
         margin: 2% auto;
     }
 
@@ -2725,6 +2724,20 @@ span[data-indicator="poll-status"]{
      margin: 5% auto;
      height:200px;
     }
+
+    .cbi-map-descr {
+        margin: 0 8%;
+    }
+
+    .cbi-value-field {
+        width: 40em;
+    }
+
+    .cbi-value {
+        gap: 5%;
+    }
+
+
 }
 
 @media only screen and (min-width: 700px) {
@@ -2732,6 +2745,19 @@ span[data-indicator="poll-status"]{
     .graphs{
      grid-template-columns: 250px 250px;
     }
+
+    .cbi-section.fade-in {
+    padding: 0;
+     width: 70%;
+    }
+
+     .cbi-map-descr {
+        margin: 0 10%;
+         text-align: center;
+    }
+
+
+    
 }
 
 @keyframes flash {
