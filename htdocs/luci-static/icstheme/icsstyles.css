@@ -1315,6 +1315,7 @@ footer ul.breadcrumb {
 
 body[data-page=""]>#modal_overlay {
     background-image: url("https://github.com/rachel-rebecca/ics-icons/blob/main/NeoWiVI_Thumbnail.png?raw=true");
+    /* background-image: url("NeoWiVI_Thumbnail.png"); */
 }
 
 #modal_overlay {
