@@ -220,9 +220,12 @@ body {
     line-height: 18px;
     color: var(--text-color-high);
     min-height: 100%;
-    width: 100%;
+    /* width: fit-content; */
     display: flex;
     flex-direction: column;
+    2
+    FONT-WEIGHT: 100;
+    /* flex-shrink: 1; */
 }
 
 .container {
@@ -246,8 +249,8 @@ a:hover {
     float: left
 }
 
-.nowrap {
-    white-space: nowrap
+span.nowrap {
+    white-space: wrap;
 }
 
 p,
@@ -816,7 +819,9 @@ textarea[readonly] {
     border-radius: 5px;
     filter: drop-shadow(3px 4px 4px #8d8d8d);
     padding: 1%;
-    /* min-width: fit-content; */
+    /* min-width: 90%; */
+    /* max-width: fit-content; */
+    flex-shrink: 1;
 }
 
 .cbi-section.fade-in {
@@ -832,10 +837,12 @@ textarea[readonly] {
 }
 
 .tr {
-    /* display: inline-flex; */
+    display: flex; 
+    flex-shrink: 1;
     /* width: 40%; */
-    /* flex-direction: column; */
-    /* align-items: center; */
+    /* flex-direction: column; 
+    /* align-items: center;*/
+    font-size: .85em
 }
 
 .table[width="33%"],
@@ -848,17 +855,20 @@ textarea[readonly] {
     display: table;
     width: 100%;
     margin-bottom: 18px;
-    font-size: 13px;
+    font-size: 12px;
     border-collapse: collapse;
     position: relative;
     padding: 1.5em;
+/*     transform: rotate(90deg); */
 }
 
 .table .th,
 .table .td {
-    /* display: table-cell; */
-    /* line-height: 18px; */
     padding: 1%;
+    text-align: center;
+    display: flex;
+    flex-shrink: 1;
+    flex-wrap: wrap;
 }
 
 .table .tr:first-child .th {
@@ -874,6 +884,16 @@ textarea[readonly] {
 
 .tr.drag-over-below {
     border-width: 0 0 2px
+}
+
+.tr > td {
+     display: flex;
+    flex-shrink: 1;
+    flex-wrap:wrap;
+    wordwrap: wrap;
+    width: min-content;
+    padding: .5% !important;
+    
 }
 
 .tr:nth-child(odd) {
@@ -892,7 +912,7 @@ header {
     background: linear-gradient(rgb(46, 163, 242), #1c7dbe);
     box-shadow: 0 1px 3px hsla(var(--border-color-low-hsl), .25), inset 0 -1px 0 hsla(var(--border-color-low-hsl), .01);
     height: 8vh;
-    width: 100%;
+    /* width: 100vw; */
     display: flex;
     align-items: center;
 }
@@ -977,8 +997,8 @@ header p {
 
 .img {
     width: 12vw;
-    min-width: 5em;
-    max-width: 8em;
+    min-width: 3em;
+    max-width: 5em;
     filter: drop-shadow(3px 6px 4px);
     margin: 1%;
 }
@@ -1449,13 +1469,13 @@ body.modal-overlay-active #modal_overlay {
     display: inline-block;
     background: var(--default-btn-background);
     color: var(--on-color);
-    font-size: 13px;
-    line-height: 2em;
+    font-size: .85em;
+    line-height: 1.5em;
     border: 1px solid #d3d3d3 !important;
     border-radius: 5px;
     white-space: pre;
-    padding: 0 14px;
-    margin: 0 1em;
+    padding: 2px;
+   
 }
 
 #radio0 {
@@ -2062,25 +2082,26 @@ table table td,
 }
 
 .table.cbi-section-table .td.cbi-section-table-cell {
-    white-space: nowrap;
+/*     white-space: wrap; */
     text-align: right
 }
 
 .table.cbi-section-table .td.cbi-section-table-cell select,
 .table.cbi-section-table .td.cbi-section-table-cell .cbi-select {
-    width: inherit
+/*     width: inherit */
 }
 
 .td.cbi-section-actions {
-    text-align: right;
+    text-align: center;
     vertical-align: middle;
-    width: 10%;
+    width: 5%;
+    padding: 0;
 }
 
 .td.cbi-section-actions> :not(.cbi-dropdown)>*,
 .td.cbi-section-actions>*>form>* {
     flex: 1 1 4em;
-    margin: 0 1px
+/*     margin: 0 1px */
 }
 
 .td.cbi-section-actions>*>form {
@@ -2092,6 +2113,10 @@ table table td,
 .tr.table-titles,
 .tr.cbi-section-table-titles {
     background: var(--background-color-medium)
+}
+
+.cbi-rowstyle-1 {
+    background: #e4e4e4;
 }
 
 th[data-sort-direction="asc"]::after {
@@ -2150,8 +2175,8 @@ th[data-sort-direction="desc"]::after {
     display: inline-flex;
     flex-direction: column;
     line-height: 1.2em;
-    min-width: 100px;
-    margin: 0 10px
+/*     min-width: 100px;
+    margin: 0 10px */
 }
 
 .ifacebox .ifacebox-head {
@@ -2183,7 +2208,7 @@ th[data-sort-direction="desc"]::after {
 .ifacebadge {
     display: inline-block;
     flex-direction: row;
-    white-space: nowrap;
+    white-space: wrap;
     border: 1px solid var(--border-color-high);
     background: linear-gradient(var(--background-color-high), var(--background-color-high) 25%, var(--background-color-medium));
     color: var(--text-color-high);
@@ -2192,13 +2217,14 @@ th[data-sort-direction="desc"]::after {
     box-shadow: inset 0 1px 0 hsla(var(--background-color-high-hsl), 0.05);
     cursor: default;
     line-height: 1.2em;
-    padding: 2px
+/*     padding: 2px */
 }
 
 .ifacebadge img {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle
+/*     width: ; */
+    height: 2em;
+    vertical-align: middle;
+/*     background:  */
 }
 
 .ifacebadge-active {
@@ -2218,7 +2244,7 @@ th[data-sort-direction="desc"]::after {
     text-align: left;
   align-items: center;
     gap: 1%;
-    justify-content: center;
+    justify-content:center;
 }
 
 .network-status-table .ifacebox-body>* {
@@ -2527,23 +2553,24 @@ div.cbi-value var.cbi-tooltip-container,
     display: flex;
     flex-direction: column;
     align-items: center;
-    white-space: normal;
+    justify-content:center;
+/*     white-space: normal; */
     text-align: center
 }
 
-.assoclist .ifacebadge>img {
+/* .assoclist .ifacebadge>img {
     margin: .2em
 }
 
 .assoclist .td:nth-of-type(3),
 .assoclist .td:nth-of-type(5) {
     width: 25%
-}
+} */
 
-.assoclist .td:nth-of-type(6) button {
+/* .assoclist .td:nth-of-type(6) button {
     word-break: normal
 }
-
+ */
 [data-darkmode="true"] [data-page="admin-statistics-graphs"] [data-plugin] img {
     filter: invert(100%) hue-rotate(150deg)
 }
@@ -2604,7 +2631,7 @@ th[data-sortable-row] {
 
 .cbi-dynlist>.add-item,
 .td.cbi-section-actions>* {
-    display: flex
+    display: flex;
 }
 
 .cbi-select select option:hover,
@@ -2699,6 +2726,10 @@ span[data-indicator="poll-status"]{
     margin-top: 2%;
 }
 
+@media only screen and (min-width: 375px){
+    
+}
+
 @media only screen and (min-width: 600px) {
     .cbi-section{
         min-width: min-content;
@@ -2738,7 +2769,15 @@ span[data-indicator="poll-status"]{
         gap: 5%;
     }
 
+    .ifacebox-body.left {
+        flex-direction: row;
+    }
 
+    .ifacebox-body.left>span{
+       flex: none;
+        line-height: 20px;
+    }
+    
 }
 
 @media only screen and (min-width: 700px) {
