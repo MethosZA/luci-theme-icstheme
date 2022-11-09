@@ -220,14 +220,14 @@ body {
     line-height: 18px;
     color: var(--text-color-high);
     min-height: 100%;
-    /* width: fit-content; */
+    width: fit-content;
     display: flex;
     flex-direction: column;
 }
 
 .container {
     width: 100%;
-    zoom: 1;
+/*     zoom: 1; */
 }
 
 a {
@@ -772,7 +772,7 @@ textarea[readonly] {
     display: inline-flex;
     align-content: center;
     margin: -3px;
-    /* width: 100%; */
+    width: 100%;
 }
 
 .cbi-section-create>* {
@@ -809,15 +809,16 @@ textarea[readonly] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: stretch;
+    /* align-items: stretch; */
     margin: 2%;
     background: rgb(254 254 254);
     border: solid 1px #8d8d8d;
     border-radius: 5px;
     filter: drop-shadow(3px 4px 4px #8d8d8d);
     padding: 1%;
-    min-width: 90%;
+    /* min-width: 90%; */
     /* max-width: fit-content; */
+    width: max-content;
     flex-shrink: 1;
 }
 
@@ -2767,6 +2768,30 @@ span.nowrap>strong{
     margin-top: 2%;
 }
 
+@media only screen and (min-width: 275px){
+    .cbi-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 2%;
+    background: rgb(254 254 254);
+    border: solid 1px #8d8d8d;
+    border-radius: 5px;
+    filter: drop-shadow(3px 4px 4px #8d8d8d);
+    padding: 1%;
+    min-width: 80%;
+/*     max-width: fit-content; */
+    width: 90%;
+    flex-shrink: 1;
+}
+
+    body {
+        width: fit-content !important;
+    }
+    
+}
+
 @media only screen and (min-width: 375px){
     .tr > td,
     .tr > th{
@@ -2805,11 +2830,12 @@ span.nowrap>strong{
 
 @media only screen and (min-width: 450px){
     .tr {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     body {
         font-size: 1em !important;
+        width: 100% !important;
     }
 
 }
@@ -2818,7 +2844,7 @@ span.nowrap>strong{
     .cbi-section{
         min-width: min-content;
         max-width: 90vw;
-        width: 90%;
+        width: 100%;
         margin: 2% auto;
     }
 
@@ -2870,7 +2896,7 @@ span.nowrap>strong{
 
     .cbi-section.fade-in {
     padding: 0;
-     width: 80%;
+    /* width: 80%; */
     }
 
      .cbi-map-descr {
