@@ -887,11 +887,12 @@ textarea[readonly] {
 .tr {
     display: flex;
     flex-shrink: 1;
-    /* width: 40%; */
+/*     width: 40%; */
     /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     font-size: .85em;
+    min-height: 2.5rem;
     /* flex-wrap: wrap; */
 }
 
@@ -905,19 +906,22 @@ td.td.left{
     margin-left: 5%
 }
 
-#view > div:nth-child(7) > div > table> tr> td {
-    width: 50% !important;
+#view > div:nth-child(7) > div > table> tr> td,
+#view > div:nth-child(6) > div > table> tr> td,
+#view > div:nth-child(5) > div > table> tr> td,
+#view > div:nth-child(4) > div > table> tr> td{
+    width: 100% !important;
 }
 
 .table {
     display: table;
     width: 100%;
-    margin-bottom: 18px;
+/*     margin-bottom: 18px; */
     font-size: 12px;
     border-collapse: collapse;
     position: relative;
     padding: 1.5em;
-/*     transform: rotate(90deg); */
+    /*     transform: rotate(90deg); */
 }
 
 .table .th,
@@ -927,12 +931,16 @@ td.td.left{
     display: flex;
     flex-shrink: 1;
     flex-wrap: wrap;
-    width: 18%;
+/*     width: 18%; */
 }
 
 .table .tr:first-child .th {
     font-weight: 700;
     /* vertical-align: top; */
+}
+
+.table .tr:last-child {
+    border-radius: 0 0 5px 5px;
 }
 
 .tr.drag-over-above,
@@ -943,6 +951,17 @@ td.td.left{
 
 .tr.drag-over-below {
     border-width: 0 0 2px
+}
+
+tr.tr.placeholder {
+    background: #e4e4e4;
+    height: 2.5rem
+}
+
+tr.tr.placeholder>td {
+    width: 100%;
+    display: flex;
+    justify-content: center
 }
 
 .tr > td {
@@ -1307,7 +1326,10 @@ footer {
     color: var(--text-color-medium);
     padding-left: calc((100% - 940px) / 2);
     padding-right: calc((100% - 940px) / 2);
-    background: #000000
+    background: #000000;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 footer a {
@@ -1795,19 +1817,19 @@ select+.cbi-button,
 }
 
 .cbi-progressbar {
-    border: 1px solid #404040;
+    border: 1px solid #dadada;
     border-radius: 3px;
     position: relative;
     min-width: 170px;
-    width: 90%;
-    max-width: 10em;
+    width: 100%;
+    max-width: 30em;
     height: 30px;
-    background: rgb(250 249 248 / 80%);
+    background: rgb(255 255 255 / 80%);
     margin: 1.4em 1em 4px
 }
 
 .cbi-progressbar>div {
-    background: #2ea3f2;
+    background: #9abbae;
     height: 100%;
     transition: width .25s ease-in;
     width: 0%;
@@ -2109,6 +2131,7 @@ table table td,
     align-items: center;
     gap: 1em;
     padding: 0 !important;
+    margin-top: 2%
 }
 
 .cbi-rowstyle-1 {
@@ -2137,6 +2160,11 @@ table table td,
     margin-right: auto;
     z-index: 900;
 }
+
+.cbi-rowstyle-1>td>button{
+    width: 5em !important;
+}
+
 th[data-sort-direction="asc"]::after {
     content: "\a0\25b2"
 }
@@ -2199,9 +2227,9 @@ th[data-sort-direction="desc"]::after {
 
 .ifacebox .ifacebox-head {
     border-bottom: 1px solid var(--border-color-high);
-    border-radius: 3px 3px 0 0;
-    background: #eee;
-    color: var(--text-color-high);
+/*     border-radius: 3px 3px 0 0; */
+    background: #48a2df;
+    color: #ffffff;
     padding: 2px
 }
 
@@ -2210,8 +2238,8 @@ th[data-sort-direction="desc"]::after {
 }
 
 .ifacebox .ifacebox-head.active {
-    background: var(--primary-color-high);
-    color: var(--on-primary-color)
+/*     background: var(--primary-color-high); */
+    color: #f4f4f4;
 }
 
 [data-darkmode="true"] .zonebadge[style],
@@ -2223,7 +2251,7 @@ th[data-sort-direction="desc"]::after {
     padding: .25em
 }
 
-.ifacebadge {
+ .ifacebadge {
     display: inline-block;
     flex-direction: row;
     white-space: wrap;
@@ -2236,13 +2264,12 @@ th[data-sort-direction="desc"]::after {
     cursor: default;
     line-height: 1.2em;
 /*     padding: 2px */
-}
+} 
 
 .ifacebadge img {
 /*     width: ; */
     height: 2em;
     vertical-align: middle;
-    margin-bottom: ;
 }
 
 .ifacebadge-active {
@@ -2255,14 +2282,32 @@ th[data-sort-direction="desc"]::after {
     flex-shrink: 1;
 }
 
+#view > div:nth-child(1) > h3,
+#view > div:nth-child(3) > div > h3:nth-child(1),
+#view > div:nth-child(4) > h3,
+#view > div:nth-child(5) > h3,
+#view > div:nth-child(6) > h3,
+#view > div:nth-child(7) > h3{
+  background:#48a2df;
+  margin:0;
+  border-radius: 4px 4px 0 0;
+}
+
+#view > div:nth-child(1) > div > h3 {
+    background: #e4e4e4;
+    height: 2.5rem;
+}
+
 .ifacebox-body {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     height: 100%;
     text-align: left;
   align-items: center;
     gap: 1%;
-    justify-content:center;
+    justify-content: center;
+    border: solid 5px #e4e4e4;
+    margin-top: 0;
 }
 
 .network-status-table .ifacebox-body>* {
@@ -2270,7 +2315,7 @@ th[data-sort-direction="desc"]::after {
 }
 
 .network-status-table .ifacebox-body>span {
-    flex: 10 10 auto;
+/*     flex: 10 10 auto; */
     height: 100%
 }
 
@@ -2296,14 +2341,14 @@ th[data-sort-direction="desc"]::after {
     padding: .25em 1.5em */
 }
 
-.ifacebadge.large {
+/* .ifacebadge.large {
     display: inline-flex
 }
 
 .ifacebadge>*,
 .ifacebadge.large>* {
     margin: 0 .125em
-}
+} */
 
 .zonebadge {
     border-radius: 4px;
@@ -2737,9 +2782,9 @@ span[data-indicator="poll-status"]{
     
 }
 
-div.ifacebox-body.left{
+/* div.ifacebox-body.left{
     margin-top: .5em
-}
+} */
 
 span.nowrap{
     display: flex;
@@ -2809,7 +2854,7 @@ span.nowrap>strong{
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 3.5%
+        gap: 2%
         
     }
     
@@ -2843,7 +2888,7 @@ span.nowrap>strong{
    
     
     .cbi-section{
-        max-width: min-content;
+        /* max-width: min-content; */
         /* width: 90%; */
         /* margin: 2% auto; */
     }
@@ -2861,11 +2906,14 @@ span.nowrap>strong{
     }
 
     .ifacebox-body.left {
-        flex-direction: row;
+        flex-direction: row-reverse;
+        flex-shrink: 1;
+        flex-grow: 1;
     }
 
     .ifacebox-body.left>span{
-       flex: none;
+        max-width: 40%;
+       flex-wrap: wrap;
         line-height: 20px;
     }
 
@@ -2886,7 +2934,7 @@ span.nowrap>strong{
 }
 
     .ifacebadge img{
-        height: 3em;
+        height: 4em;
     }
 
     .cbi-value label.cbi-value-title,
@@ -2896,10 +2944,13 @@ span.nowrap>strong{
 .table .tr.cbi-section-table-descr .th,
     .cbi-value-field>em,
     .cbi-section-table-cell,
-    .cbi-button {
+    .cbi-button,
+    .td,
+    .th {
         font-size: .9rem !important;
     }
-    
+
+
     
 }
 
@@ -2949,6 +3000,13 @@ span.nowrap>strong{
     #cbi-wireless{
        align-items: center;
     }
+
+        .tr.table-titles>th,
+.cbi-rowstyle-1>td,
+    .td{
+    font-size: 1rem !important;
+    padding: 0 1.25rem;
+}
 
     
 }
