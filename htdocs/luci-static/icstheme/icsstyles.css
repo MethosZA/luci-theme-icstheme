@@ -2270,6 +2270,9 @@ th[data-sort-direction="desc"]::after {
 /*     width: ; */
     height: 2em;
     vertical-align: middle;
+/*     background: #2ea4f2; */
+    background: #acb8dd;
+    border-radius: 50%;
 }
 
 .ifacebadge-active {
