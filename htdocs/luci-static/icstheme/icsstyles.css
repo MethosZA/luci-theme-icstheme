@@ -2098,11 +2098,16 @@ table table td,
 }
 
 .cbi-rowstyle-2,
+.cbi-rowstyle-1,
 .tr.table-titles,
 .tr.cbi-section-table-titles {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
     background: var(--background-color-medium);
     justify-content: center;
-    gap: 1%;
+    align-items: center;
+    gap: 1em;
     padding: 0 !important;
 }
 
@@ -2110,6 +2115,28 @@ table table td,
     background: #e4e4e4;
 }
 
+.tr.table-titles>th,
+.cbi-rowstyle-1>td{
+    display: inline-block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc(100% / 6);
+    max-width: 20%;
+    margin: 0;
+    text-align: center;
+    overflow:hidden;
+/*     white-space: nowrap; */
+    flex-wrap: wrap;
+}
+
+.tr.table-titles>th:hover,
+.cbi-rowstyle-1>td:hover,
+.tr.table-titles>th:active,
+.cbi-rowstyle-1>td:active {
+    overflow: visible;
+    margin-right: auto;
+    z-index: 900;
+}
 th[data-sort-direction="asc"]::after {
     content: "\a0\25b2"
 }
@@ -2551,19 +2578,19 @@ div.cbi-value var.cbi-tooltip-container,
     text-align: center
 }
 
-/* .assoclist .ifacebadge>img {
+.assoclist .ifacebadge>img {
     margin: .2em
 }
 
 .assoclist .td:nth-of-type(3),
 .assoclist .td:nth-of-type(5) {
     width: 25%
-} */
+} 
 
-/* .assoclist .td:nth-of-type(6) button {
+ .assoclist .td:nth-of-type(6) button {
     word-break: normal
 }
- */
+
 [data-darkmode="true"] [data-page="admin-statistics-graphs"] [data-plugin] img {
     filter: invert(100%) hue-rotate(150deg)
 }
