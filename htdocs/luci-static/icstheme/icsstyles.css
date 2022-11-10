@@ -1327,7 +1327,7 @@ footer {
     padding-left: calc((100% - 940px) / 2);
     padding-right: calc((100% - 940px) / 2);
     background: #000000;
-    position: absolute;
+    position: static;
     bottom: 0;
     width: 100%;
 }
@@ -1829,7 +1829,7 @@ select+.cbi-button,
 }
 
 .cbi-progressbar>div {
-    background: #9abbae;
+    background: #acb8dd;
     height: 100%;
     transition: width .25s ease-in;
     width: 0%;
@@ -2293,7 +2293,7 @@ th[data-sort-direction="desc"]::after {
   border-radius: 4px 4px 0 0;
 }
 
-#view > div:nth-child(1) > div > h3 {
+body[data-page="admin-status-overview"] #view > div:nth-child(1) > div > h3 {
     background: #e4e4e4;
     height: 2.5rem;
 }
