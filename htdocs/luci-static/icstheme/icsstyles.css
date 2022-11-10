@@ -1327,7 +1327,7 @@ footer {
     padding-left: calc((100% - 940px) / 2);
     padding-right: calc((100% - 940px) / 2);
     background: #000000;
-    position: relative;
+    position: static;
     bottom: 0;
     width: 100%;
 }
@@ -1829,7 +1829,7 @@ select+.cbi-button,
 }
 
 .cbi-progressbar>div {
-    background: #9abbae;
+    background: #e9de70;
     height: 100%;
     transition: width .25s ease-in;
     width: 0%;
@@ -2662,6 +2662,10 @@ h2 small,
 h3 small,
 h5 {
     font-size: 14px
+}
+
+#maincontent > h2 {
+    display: none;
 }
 
 h3 {
