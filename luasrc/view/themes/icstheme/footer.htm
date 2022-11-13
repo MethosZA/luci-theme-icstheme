@@ -1,16 +1,61 @@
 
-		<% if not blank_page then %>
-		<%   local ver = require "luci.version" %>
-		</div>
-		<footer>
-			<span>
-				<a href="https://intrepidcs.com/support/support-resources/">Support Resources</a>
-				<a href="https://intrepidcs.com/support/contact-support/">Contact Support</a>
-				<a href="https://github.com/openwrt/luci">Powered by <%= ver.luciname %> (<%= ver.luciversion %>)</a> / <%= ver.distversion %>
-			</span>
-			<ul class="breadcrumb pull-right" id="modemenu" style="display:none"></ul>
-		</footer>
-		<script type="text/javascript">L.require('menu-bootstrap')</script>
-		<% end %>
-	</body>
+
+<% if not blank_page then %>
+<%   local ver = require "luci.version" %>
+</div>
+<footer>
+		<span>
+				<a href="https://intrepidcs.com/support/support-resources/" target="blank">Support Resources</a>                                
+				<a href="https://intrepidcs.com/support/contact-support/" target="blank">Contact Support </a>                           
+					<a href="https://intrepidcs.com/support/customer-specific-support/" target="blank">Customer Spec ific Support </a>                               
+					 <a href="https://intrepidcs.com/products/software/wireless-neovi/" target="blank">Wireless NeoVI Info </a>                             
+					 <a href="https://intrepidcs.com/" target="blank">Main Website</a>
+				<a href="https://github.com/openwrt/luci" target="blank">Powered by <%= ver.luciname %>
+		</span>
+		<ul class="breadcrumb pull-right" id="modemenu" style="display:none"></ul>
+</footer>
+<script>
+	window.addEventListener('resize', function(){if(window.innerWidth >= 600){  
+		 document.querySelector("#mobile-menu").classList.remove("visible"); 
+		  document.querySelector("#mobile-menu").classList.add("hide"); 
+		   document.querySelector("#x-button").classList.add("hide");  
+		   document.querySelector("#x-button").classList.remove("x-button");                                                                                                                               }})                                                                                                      
+	var menuClicked = false, xClicked = false;
+		document.querySelector("#hamburger-menu").addEventListener("click", function(){
+		menuClicked= true;
+		xClicked = false;
+		if(menuClicked && window.innerWidth < 600){
+			document.querySelector("#mobile-menu").classList.remove("hide");
+			document.querySelector("#mobile-menu").classList.add("visible");
+			document.querySelector("#topmenu").classList.add("visible");
+			document.querySelector("#x1").classList.add("rotatex1");
+			document.querySelector("#x2").classList.add("rotatex2");
+			document.querySelector("#x-button").classList.add("x-button");  
+			document.querySelector("#x-button").classList.remove("hide");  
+		}
+		});
+
+		document.querySelector("#x-button").addEventListener("click", function(){
+		menuClicked= false;
+		xClicked = true;
+		if(xClicked && window.innerWidth < 600){
+			document.querySelector("#mobile-menu").classList.add("hide");
+			document.querySelector("#mobile-menu").classList.remove("visible");
+			document.querySelector("#topmenu").classList.remove("visible");
+			document.querySelector("#x-button").classList.add("hide");  
+			document.querySelector("#x-button").classList.remove("x-button");  
+		}
+		});
+
+		if(window.innerWidth >= 600){
+		document.querySelector("#mobile-menu").classList.add("hide");
+		document.querySelector("#mobile-menu").classList.remove("visible");
+		document.querySelector("#topmenu").classList.remove("visible");
+		document.querySelector("#x-button").classList.add("hide");  
+		document.querySelector("#x-button").classList.remove("x-button");  
+		}
+</script>
+<script type="text/javascript">L.require('menu-bootstrap')</script>
+<% end %>
+</body>
 </html>
