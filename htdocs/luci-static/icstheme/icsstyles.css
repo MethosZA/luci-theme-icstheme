@@ -1393,8 +1393,9 @@ footer span {
     display: grid;
     justify-content: center;
     width: 100%;
+    align-items: center;
     grid-template-rows: 3em 3em 3em;
-    grid-template-columns: 16em 16em 16em;
+    grid-template-columns: 10em 10em 10em;
 }
 
 footer ul.breadcrumb {
