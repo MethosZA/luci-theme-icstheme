@@ -133,10 +133,6 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
-a:focus {
-    outline: thin dotted
-}
-
 a:hover,
 a:active {
     outline: 0
@@ -495,6 +491,7 @@ tr[id*= 'cbi-wireless-trm_uplink']>td {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-bottom: 2em;
 }
 
 tr[id*= 'cbi-wireless-trm_uplink']>div>div>.cbi-button {
@@ -808,9 +805,9 @@ textarea[readonly] {
 }
 
 .cbi-section-create {
-    display: inline-flex;
+    display: flex;
     align-content: center;
-    margin: -3px;
+    justify-content: center;
     width: 100%;
 }
 
@@ -853,7 +850,6 @@ textarea[readonly] {
     border: solid 1px #8d8d8d;
     border-radius: 5px;
     filter: drop-shadow(3px 4px 4px #8d8d8d);
-    padding: 1%;
     width: max-content;
     flex-shrink: 1;
 }
@@ -1127,6 +1123,25 @@ body[data-page="admin-services-wivi-overview"]>div>#tabmenu{
     display: none;
 }
 
+body[data-page="admin-services-travelmate-stations"]>#modal_overlay>.modal>.table>.cbi-rowstyle-2{
+    background: #fff;
+}
+
+
+body[data-page='admin-system-crontab']>#maincontent>#view>p>textarea{
+    margin: 1% !important;
+    width: 98% !important;
+     color: #e5e5e5;
+    background: #000000;
+}
+
+body[data-page='admin-system-crontab']>#maincontent>#view>div>button{
+    background: var(--success-color-low);
+    color: #f5f5f5;
+    padding: .25em 2rem;
+    width: 10em !important;
+}
+
 .nav>li {
     display: block;
     float: left
@@ -1307,6 +1322,10 @@ a.menu:after {
     font-weight: 700
 }
 
+.cbi-tab-descr {
+    text-align: center;
+}
+
 .tabs .menu-dropdown,
 .tabs .dropdown-menu {
     top: 35px;
@@ -1365,17 +1384,17 @@ footer {
 
 footer a {
     color: #c6c6c6;
+    display: inline-flex;
     margin: .1em;
-    width: fit-content;
+    width: 20em;
 }
 
 footer span {
-    margin-bottom: 1em;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     justify-content: center;
-    align-items: center;
     width: 100%;
+    grid-template-rows: 3em 3em 3em;
+    grid-template-columns: 16em 16em 16em;
 }
 
 footer ul.breadcrumb {
@@ -1405,6 +1424,9 @@ footer ul.breadcrumb {
 
 body[data-page=""]>#modal_overlay {
     background-image: url("https://github.com/rachel-rebecca/ics-icons/blob/main/NeoWiVI_Thumbnail.png?raw=true");
+      background-repeat: no-repeat; 
+  background-size: cover; 
+    background-position: center;
     /* background-image: url("NeoWiVI_Thumbnail.png"); */
 }
 
@@ -1545,16 +1567,109 @@ body.modal-overlay-active #modal_overlay {
     border-radius: 5px;
     white-space: pre;
     padding: 2px;
-   
 }
+
+
 
 #radio0 {
     margin-left: 23%;
 }
 
+#cbi-wivi > div > img {
+    align-self: center;
+}
+
 #cbi-wivi > div:nth-child(3) > div.right > button:nth-child(2){
-margin-right: 5%;
-    
+margin-right: 5%;  
+}
+
+#cbi-dropbear-dropbear>div:nth-child(2)>button{
+    margin-right: 5% !important;
+    background: var(--error-color-low);
+    color: #f5f5f5;
+    padding: .25em 2em;
+}
+
+#cbi-dropbear-dropbear>div:nth-child(4)>button{
+    background: var(--success-color-low);
+    color: #f5f5f5;
+    padding: .25em 2rem;
+    width: 10em !important;
+    flex: 0;
+    text-align: center;
+}
+
+#cbi-wivi-client>div.cbi-value:nth-child(odd),
+#cbi-wivi > div:nth-child(3) > div.cbi-value,
+#cbi-travelmate>div.cbi-section>div.cbi-value:nth-child(odd),
+#cbi-travelmate-global>div>div.cbi-value:nth-child(odd),
+#cbi-travelmate-global>div:nth-child(3)>div:nth-child(2),
+#cbi-system-system>div>div>div:nth-child(odd),
+#cbi-dropbear-dropbear>div:nth-child(3)>div:nth-child(odd){
+    background: #f5f5f5
+};
+
+#cbi-wivi-client>.cbi-value,
+#cbi-travelmate-global>div>div.cbi-value,
+#cbi-system-system>div>div>div.cbi-value{
+    margin: 0 !important;
+}
+
+#cbi-wivi > div:nth-child(3) > div.cbi-value,
+#cbi-wivi-client>div.cbi-value,
+#cbi-travelmate>div.cbi-section>div.cbi-value,
+#cbi-dropbear-dropbear>div:nth-child(3)>div{
+    padding: 18px 0;
+     margin: 1% 0 !important
+}
+
+#cbi-system-system>div>div>div.cbi-value {
+    height: fit-content;
+    min-height: 5em;
+}
+
+#cbi-travelmate-global>div>div.cbi-value,
+#cbi-travelmate > div:nth-child(3) > div:nth-child(2)>.cbi-value{
+    padding: 16px;
+}
+
+#cbi-wivi-client>.cbi-value>.cbi-value-title,
+#cbi-wivi > div:nth-child(3) > div.cbi-value>.cbi-value-title,
+#cbi-travelmate>div.cbi-section>div.cbi-value>.cbi-value-title,
+#cbi-travelmate-global>div>div.cbi-value>label,
+#cbi-system-system>div>div>div.cbi-value>.cbi-value-title,
+#cbi-dropbear-dropbear>div:nth-child(3)>div>label{
+    text-align: left;
+    padding-left: 8%
+}
+
+#cbi-wivi > div:nth-child(3) > div.right > button,
+#cbi-travelmate>div.cbi-section>div.right>button{
+    margin-bottom: 1% !important;
+}
+
+#cbi-travelmate>div.cbi-section>div.cbi-value>.cbi-value-field,
+#cbi-travelmate-global>div>div.cbi-value>.cbi-value-field {
+    width: fit-content;
+}
+
+div[data-tab='general']>.cbi-value>.cbi-value-field{
+    padding-right: 6%;
+}
+
+div[data-tab='general']>.cbi-value {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+div[data-tab='timesync']>div:nth-child(4){
+    background: #f5f5f5;
+}
+
+div[data-tab='timesync']>div:nth-child(5){
+    background: #fff !important;
+    padding-top: 2%;
 }
 
 div[data-field*="cbid.system"]>div>span>button{
@@ -1565,7 +1680,7 @@ div[data-field*="cbid.system"]>div>span>button{
 .cbi-input-invalid.cbi-dropdown:not(.btn):not(.cbi-button),
 .cbi-input-invalid.cbi-dropdown:not([open])>ul>li,
 .cbi-value-error input {
-    color: var(--error-color-high);
+    color: var(--error-color-low);
     border-color: #404040;
 }
 
@@ -1573,7 +1688,7 @@ div[data-field*="cbid.system"]>div>span>button{
 .cbi-button-fieldadd,
 .cbi-button-add,
 .cbi-button-save {
-    --on-color: var(--success-color-high);
+    --on-color: var(--success-color-low);
     border-color: var(--on-color)
 }
 
@@ -1590,8 +1705,12 @@ div[data-field*="cbid.system"]>div>span>button{
 .cbi-section-remove .cbi-button,
 .cbi-button-reset,
 .cbi-button-remove {
-    --on-color: var(--error-color-high);
+    --on-color: var(--error-color-low);
     border-color: var(--on-color)
+}
+
+body[data-page='admin-system-admin']>#maincontent>#view>div.cbi-page-actions>button.cbi-button-save{
+    padding: .25em 4em !important;
 }
 
 .cbi-page-actions::after {
@@ -2293,6 +2412,14 @@ th[data-sort-direction="desc"]::after {
     flex-shrink: 1;
 }
 
+#view > div:nth-child(4)>div>.network-status-table>.ifacebox>.ifacebox-body{
+    flex-direction: column-reverse
+}
+
+#view > div:nth-child(4)>div>.network-status-table>.ifacebox>.ifacebox-body>div{
+    height: max-content !important;
+}
+
 #view > div:nth-child(1) > h3,
 #view > div:nth-child(3) > div > h3:nth-child(1),
 #view > div:nth-child(4) > h3,
@@ -2327,15 +2454,21 @@ body[data-page="admin-status-overview"] #view > div:nth-child(1) > div > h3 {
 }
 
 .network-status-table .ifacebox-body>span {
-    whitespace: wrap;
-    overfloew: hidden;
-    height: 100%
+    whitespace: nowrap;
+    overflow: hidden;
+    height: 100%;
+    margin: 0 !important;
+   width: calc(100%/2);
 }
 
 .network-status-table .ifacebox-body>div {
     display: flex;
     flex-wrap: wrap;
-    margin: -.125em
+    justify-content: center;
+    align-items: center;
+    margin: -.125em;
+    width: calc(100%/1);
+
 }
 
 #view > div:nth-child(4) > div > div
@@ -2384,14 +2517,6 @@ div.cbi-value var,
 .td.cbi-value-field var {
     font-style: italic;
     color: #0069d6
-}
-
-div.cbi-value var[data-tooltip],
-.td.cbi-value-field var[data-tooltip],
-div.cbi-value var.cbi-tooltip-container,
-.td.cbi-value-field var.cbi-tooltip-container {
-    cursor: help;
-    border-bottom: 1px dotted #0069d6
 }
 
 div.cbi-value var.cbi-tooltip-container,
@@ -2699,6 +2824,7 @@ th[data-sortable-row] {
 .cbi-dynlist>.add-item,
 .td.cbi-section-actions>* {
     display: flex;
+    justify-content: center;
 }
 
 .cbi-select select option:hover,
@@ -2785,7 +2911,8 @@ span[data-indicator="poll-status"]{
 }
 
 div.ifacebox-body.left{
-    flex-basis: calc(100%/4)
+    display: flex;
+    align-items: center;
     
 }
 
@@ -2806,7 +2933,6 @@ span.nowrap>strong{
     opacity: 1;
     overflow: visible;
     transition: opacity .25s ease-in;
-    margin-top: 2%;
 }
 
 @media only screen and (min-width: 275px){
@@ -2820,7 +2946,7 @@ span.nowrap>strong{
     border: solid 1px #8d8d8d;
     border-radius: 5px;
     filter: drop-shadow(3px 4px 4px #8d8d8d);
-    padding: 1%;
+    padding: 2% 0;
     min-width: 80%;
     width: 90%;
     flex-shrink: 1;
@@ -2893,13 +3019,22 @@ span.nowrap>strong{
         flex-shrink: 1;
         flex-grow: 1;
         font-size: 75%;
+        align-items: center;
+        
     }
 
-    .ifacebox-body.left>span{
-        max-width: 50%;
+    .ifacebox-body.left>span,
+    .ifacebox-body.left>div{
+        max-width: max-content;
        flex-wrap: wrap;
         line-height: 20px;
-        
+        margin: 2%;
+        align-items: center;
+        height: 100%;    
+    }
+
+    .ifacebox-body.left>div>span {
+        height: 100%;
     }
 
     #topmenu {
@@ -2968,8 +3103,9 @@ header a {
     }
 
      .cbi-map-descr{
-        margin: 0 10%;
-         text-align: center;
+        margin: auto;
+        text-align: center;
+        max-width: 50em;
     }
 
         .cbi-value {
@@ -3043,6 +3179,50 @@ header {
     gap: 2%;
 }
 
+#cbi-wivi-client>.cbi-value,
+#cbi-travelmate-global>div>div.cbi-value{
+    margin: 1.25em 0 !important;
+}
+
+#cbi-system-system>div>div>div.cbi-value{
+    margin: 0 !important;
+}
+
+#cbi-wivi-client>.cbi-value>.cbi-value-title,
+#cbi-wivi > div:nth-child(3) > div.cbi-value>.cbi-value-title,
+#cbi-travelmate-global>div>div.cbi-value>div.cbi-value-title,
+#cbi-system-system>div>div>div.cbi-value>.cbi-value-title{
+    padding-left: 15%;
+}
+
+body[data-page='admin-system-crontab']>#maincontent>#view>p{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    width: 80% !important;
+    margin: auto;
+}
+
+body[data-page='admin-system-crontab']>#maincontent>#view>p>textarea{
+    width: 100% !important;
+     max-width: 70em !important;
+}
+
+
+body[data-page="admin-services-travelmate-overview"]>#maincontent>#tabmenu>.tabs>li:first-child,
+    body[data-page="admin-services-travelmate-stations"]>#maincontent>#tabmenu>.tabs>li:first-child,
+    body[data-page*='admin-status-logs']>#maincontent>#tabmenu>.tabs>li:first-child,
+     body[data-page*='admin-system-admin']>#maincontent>#tabmenu>.tabs>li:first-child{
+    margin-left: auto !important;
+}
+
+    body[data-page="admin-services-travelmate-overview"]>#maincontent>#tabmenu>.tabs>li:last-child,
+    body[data-page="admin-services-travelmate-stations"]>#maincontent>#tabmenu>.tabs>li:last-child,
+      body[data-page*='admin-status-logs']>#maincontent>#tabmenu>.tabs>li:last-child,
+     body[data-page*='admin-system-admin']>#maincontent>#tabmenu>.tabs>li:last-child{
+    margin-right: 55% !important;
+}
     
 }
 
