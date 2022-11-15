@@ -404,39 +404,13 @@ address {
     margin-bottom: 18px
 }
 
-/* code,
-pre {
-    font-family: Monaco, Andale Mono, Courier New, monospace;
-    font-size: 12px;
-    border-radius: 3px;
-    padding: 0 3px 2px
-} */
-
 code {
     background-color: var(--border-color-low);
     color: var(--text-color-high);
     padding: 1px 3px
 }
 
-/* pre {
-    --border-color-h: var(--background-color-h);
-    --border-color-s: var(--background-color-s);
-    --border-color-delta-l: 100%;
-    --border-color-l: calc(var(--background-color-l) + var(--background-color-delta-l-sign) * var(--border-color-delta-l));
-    --border-color-a: 0.15;
-    --border-color: hsla(var(--border-color-hsl), var(--border-color-a));
-    background-color: var(--background-color-low);
-    display: block;
-    line-height: 18px;
-    font-size: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 3px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    margin: 0 0 18px;
-    padding: 8.5px
-}
- */
+
 fieldset {
     margin-bottom: 9px;
     padding-top: 9px
@@ -1033,12 +1007,12 @@ header ul .active>a {
 }
 
 header > .brand {
-    display: block;
-    /* margin: 5px 15px; */
-    /* width: 87%; */
-    /* min-width: 151px; */
+    display: flex;
+    justify-content: flex-end;
+    width: 87%;
+    min-width: 151px;
     flex-basis: calc(100%/2);
-    max-width: 24em;
+    max-width: 30%;
 }
 
 #hamburger-menu {
@@ -1104,7 +1078,6 @@ right: 0;
 #brand-img {
     width: 10rem;
     top: 5;
-    /* margin: .25em; */
 }
 
 #brand-img:hover {
@@ -2939,10 +2912,6 @@ span.nowrap>strong{
 
 #mobile-menu {
     display: flex;
-    flex-direction: row;
-    /* width: 100%; */
-    /* position: absolute; */
-    /* left: 30%; */
 }
 
     .ifacebadge img{
@@ -2973,16 +2942,11 @@ select{
     height: 28px;
 }
 
-    header > .brand {
-    flex-basis: calc(100%/3);
-}
-
     
 header {
-    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 header a {
@@ -3020,10 +2984,6 @@ header a {
         font-size: 1em;
     }
 
-     #mobile-menu{
-        /* margin-left: 3em; */
-    }
-
     .cbi-page-actions{
         text-align: center;
         margin: auto;
@@ -3053,6 +3013,34 @@ header a {
     .tabs>li,
 .cbi-tabmenu>li {
     max-width: 10em;
+}
+
+  header > .brand {   
+    width: fit-content;
+      margin-left: auto;
+      display: flex; 
+      max-width: 18em;
+  }
+
+#mobile-menu {
+     margin-right: auto;
+     width:   40em;
+    max-width: 70em;
+}
+
+  #brand-img {
+    width: 14em;
+}
+
+    
+header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
 }
 
     
