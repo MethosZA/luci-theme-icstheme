@@ -408,7 +408,7 @@ hr {
 
 strong {
     font-style: inherit;
-    font-weight: 700
+    font-weight: 700;
 }
 
 em {
@@ -467,14 +467,15 @@ textarea {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+
 }
 
 .cbi-value-field {
     margin-left: 20px;
     width: 40vw;
     -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -ms-flex: 1;
+    flex: 1;
 }
 
 .cbi-value label.cbi-value-title {
@@ -484,7 +485,7 @@ textarea {
         -ms-flex: .85 1;
             flex: .85 1;
     text-align: right;
-    color: var(--text-color-high)
+    color: var(--text-color-high);
 }
 
 #cbi-wireless-wifi-iface {
@@ -947,7 +948,8 @@ textarea[readonly] {
     margin: 0
 }
 
-.cbi-section {
+.cbi-section,
+#wifi_assoclist_table{
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -971,6 +973,22 @@ textarea[readonly] {
         flex-shrink: 1;
 }
 
+#wifi_assoclist_table{
+    width: 90%;
+    padding: 2% 0 !important;
+    max-width: 65em;
+    margin: auto;
+}
+
+#wifi_assoclist_table>tr{
+    width: 100%
+}
+
+#wifi_assoclist_table>tr>td>.ifacebadge>img,
+#wifi_assoclist_table>tr>td>div.class>div.ifacebadge>img {
+    border-radius: 0 !important;
+}
+
 .cbi-section.fade-in {
     padding: 0;
     margin: 2% auto;
@@ -990,13 +1008,13 @@ textarea[readonly] {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-negative: 1;
-        flex-shrink: 1;
+    flex-shrink: 1;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     font-size: .85em;
     min-height: 2.5rem;
 }
@@ -1060,9 +1078,9 @@ td[data-title="Encryption"] {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-negative: 1;
-        flex-shrink: 1;
+    flex-shrink: 1;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .table .tr:first-child .th {
@@ -1125,22 +1143,21 @@ header {
     color: #404040;
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex;
     background: -webkit-gradient(linear, left top, left bottom, from(rgb(46, 163, 242)), to(#1c7dbe));
     background: -o-linear-gradient(rgb(46, 163, 242), #1c7dbe);
     background: linear-gradient(rgb(46, 163, 242), #1c7dbe);
     -webkit-box-shadow: 0 1px 3px hsla(var(--border-color-low-hsl), .25), inset 0 -1px 0 hsla(var(--border-color-low-hsl), .01);
-            box-shadow: 0 1px 3px hsla(var(--border-color-low-hsl), .25), inset 0 -1px 0 hsla(var(--border-color-low-hsl), .01);
+    box-shadow: 0 1px 3px hsla(var(--border-color-low-hsl), .25), inset 0 -1px 0 hsla(var(--border-color-low-hsl), .01);
     height: 4.5em;
     padding: 1rem;
     width: 100%;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 header a {
@@ -1165,10 +1182,19 @@ header > .brand {
     max-width: 30%;
 }
 
+#indicators {
+    display: flex;
+    align-items: center;
+}
+
+#indicators>span {
+   height: 2.5em;
+}
+
 #hamburger-menu {
     position: absolute;
     right: 0;
-    margin: 1.5em
+    margin: 1.5em;
 }
 
 .x-button{
@@ -1253,11 +1279,8 @@ right: 0;
 }
 
 header .pull-right {
-    margin-left: auto;
-    margin-right: 5px;
     -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center
+    -ms-grid-row-align: center;
 }
 
 header p {
@@ -1295,6 +1318,201 @@ header p {
      border-bottom: solid 1px #666;
     border-radius: 0% 50% 50% 0%;
     text-align: center;
+}
+
+body[data-page="admin-network-network"]>#modal_overlay>.modal>h4{
+    font-size: 1.25rem;
+    margin: 1.25rem 0 0 0;
+}
+
+body[data-page="admin-network-network"]>#modal_overlay>.modal>.cbi-map{
+    width: 100%;
+    align-self: center;
+}
+
+body[data-page="admin-network-network"]>#modal_overlay>.modal>.cbi-map>.cbi-section{
+    border: none !important;
+    filter: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+body[data-page="admin-network-network"]>#modal_overlay>.modal>.cbi-map>.cbi-section>.cbi-section-node>[data-tab="general"]>div:first-child>div>div{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body[data-page="admin-network-network"]>#modal_overlay>.modal>.cbi-map>.cbi-section>.cbi-section-node>[data-tab="general"]>div:first-child{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1em;
+   height: fit-content;
+   border: solid 5px #e8e8e8;
+   border-radius: 3px;
+   max-width: 30em;
+   margin: auto !important;
+}
+
+body[data-page="admin-network-network"]>#modal_overlay>.modal>.cbi-map>.cbi-section>.cbi-section-node>[data-tab="general"]>div:first-child>.cbi-value-field{
+   padding: 0;
+}
+
+body[data-page="admin-network-network"]>#modal_overlay>.modal>.cbi-map>.cbi-section>.cbi-section-node>[data-tab="general"]>div:first-child>label{
+   background: #e8e8e8;
+   width: 101%;
+   text-align: center !important;
+   font-weight: 700;
+   padding: .75em 0;
+}
+
+body[data-page="admin-network-network"]>#modal_overlay>.modal>.cbi-map>.cbi-section>div>div>.cbi-value {
+    gap: 0;
+    min-height: 3em;
+    width: 100%;
+    margin: 0 !important;
+}
+
+body[data-page="admin-network-network"]>#modal_overlay>.modal>.cbi-map>.cbi-section>div>div>.cbi-value>label{
+    text-align: left !important;
+    padding-left: 9em;
+}
+
+div[data-tab="dhcp"]>div>div{
+    margin: 0 auto !important;
+    max-width: 43em !important;
+    width: 76%;
+}
+
+body[data-page="admin-network-wireless"]>#maincontent>#view>div.cbi-page-actions{
+    margin: 2em !important;
+}
+
+div[data-tab="interface"]>table>tr{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+div[data-tab="interface"]>table>tr>td:nth-child(1)>div{
+   width: 14em;
+   height: 8em;
+    margin: 1em 0 .2em 0;
+}
+
+div[data-tab="interface"]>table>tr>td:nth-child(1)>div>.ifacebox-body{
+    border: solid 5px #e4e4e4 !important;
+}
+
+div[data-tab="interface"]>table>tr>td:nth-child(1)>div>.ifacebox-body>span>img{
+    height: 4em;
+}
+
+div[data-tab="interface"]>table>tr>td:nth-child(2)>div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div[data-tab="interface"]>table>tr>td:nth-child(2)>div>span{
+    width: 14em;
+    max-width: 18em;
+    line-height: .75em;
+    word-break: break-all;
+}
+
+div[data-tab="interface"]>table>tr>td:nth-child(2)>div>br{
+    display: none;
+}
+
+div[data-tab="interface"]>table>tr>td:nth-child(3)>div{
+    margin: .2em 0 1em 0;
+}
+
+div[data-tab="interface"]>.cbi-section-create{
+    margin: 1em 0 .25em 0;
+}
+
+div[data-tab="device"]{
+        width: 95% !important;
+}
+
+div[data-tab="device"]>table{
+    display: flex;
+    flex-direction: column;
+      padding: 0 !important;
+}
+
+div[data-tab="device"]>table>tr{
+    display: flex;
+      padding: 0 !important;
+    width: 100%;
+    height: 6em
+}
+
+div[data-tab="device"]>table>tr>.cbi-value-field,
+div[data-tab="device"]>table>tr.cbi-section-table-titles {
+  margin:  0  !important;
+}
+
+div[data-tab="device"]>table>tr>td{
+    font-size: 120% !important;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+div[data-tab="device"]>table>tr>.cbi-section-actions>div{
+  position: absolute;
+  right: 0;
+    display: flex;
+    flex-direction: column;
+    height: 2em;
+}
+
+div[data-tab="device"]>table>tr>.cbi-section-actions>div>button{
+  width: fit-content !important;
+    height: fit-content !important;
+}
+
+div[data-tab="device"]>div.cbi-section-create>button{
+    max-width: 20em !important;
+    margin: 1.25em 0 !important;
+}
+
+#cbi-wireless-wifi-device{
+    width: 95% !important;
+    margin-top: 3em !important;
+}
+
+#cbi-wireless-wifi-device>table>tr{
+    width: 100%;
+    display: flex;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+#cbi-wireless-wifi-device>table>tr>td{
+    flex-basis: calc(100%/3);
+    display: flex;
+    width: 6em !important;
+    margin: 0 !important;
+}
+
+#cbi-wireless-wifi-device>table>tr>td.cbi-section-actions>div>button{
+    width: fit-content !important;
+    margin: 2% !important;
+}
+
+#cbi-wireless-wifi-device>table>tr>td>br{
+    display: none;   
+}
+
+#cbi-wireless-wifi-device>table>tr>td,
+ #cbi-wireless-wifi-device>table>tr>td>div>big {
+    font-size: .8rem !important;
+     text-align: left;
 }
 
 body[data-page="admin-services-wivi-overview"]>div>#tabmenu{
@@ -1444,7 +1662,9 @@ a.menu:after {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 1em;
+    margin: 2em auto 1em;
+    max-width: 47rem;
+    width: 100%;
     border-bottom: solid 1.5px #e4e4e4;
 }
 
@@ -1671,7 +1891,8 @@ footer ul.breadcrumb {
     width: 3em;
 }
 
-body[data-page="admin-services-wivi"]>#modal_overlay {
+body[data-page="admin-services-wivi"]>#modal_overlay,
+body[data-page=""]>#modal_overlay {
     /* background-image: url("https://github.com/rachel-rebecca/ics-icons/blob/main/NeoWiVI_Thumbnail.png?raw=true"); */
       background-repeat: no-repeat; 
   background-size: cover; 
@@ -1679,21 +1900,28 @@ body[data-page="admin-services-wivi"]>#modal_overlay {
     background-image: url("NeoWiVI_Thumbnail.png");
 }
 
+#login-img {
+    display: block;
+    margin-bottom: 3%;
+    width: 100%;
+}
+
+
 #modal_overlay {
     position: fixed;
     top: 0;
     bottom: 0;
     -webkit-box-shadow: inset 0 0 0 1000px rgb(12 50 75 / 87%);
-            box-shadow: inset 0 0 0 1000px rgb(12 50 75 / 87%);
-  background-repeat: no-repeat; 
-  background-size: cover; 
+    box-shadow: inset 0 0 0 1000px rgb(12 50 75 / 87%);
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 900;
     overflow: auto;
     -webkit-transition: opacity .125s ease-in;
     -o-transition: opacity .125s ease-in;
     transition: opacity .125s ease-in;
     opacity: 0;
-    visibility: hidden
+    visibility: hidden;
 }
 
 #modal_overlay>.modal.login>form>.cbi-section>.cbi-section-node>.cbi-value {
@@ -1710,30 +1938,60 @@ body[data-page="admin-services-wivi"]>#modal_overlay {
 .modal {
     width: 90%;
     min-height: 32px;
-    max-width: 50em !important;
+    max-width: 47em !important;
     border-radius: 3px;
     background: #fff;
     border: 1px solid var(--border-color-low);
     -webkit-box-shadow: 0 0 3px var(--background-color-low);
-            box-shadow: 0 0 3px var(--background-color-low);
+    box-shadow: 0 0 3px var(--background-color-low);
     min-width: 270px;
     margin: 5em auto;
-    padding: 1em 1em .5em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 999999;
 }
 
 .modal>* {
     line-height: normal;
     margin-bottom: .5em;
+}
+
+.modal.login{
+    max-width: 40em !important;
+}
+
+.modal.login > button{
+    width: 40vw;
+    max-width: 25em !important;
+}
+
+.modal.login > form > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 3;
+}
+
+.modal.login >form> .cbi-section{
+    margin: 0;
+}
+
+.modal.login > form > div > div > div {
+    width: 100% !important;
+}
+
+#luci_username, 
+#luci_password {
+    min-width: 12em;
+    max-width: 25em !important;
 }
 
 .modal>h4{
@@ -1768,7 +2026,8 @@ body.modal-overlay-active #modal_overlay {
     left: 0;
     right: 0;
     opacity: 1;
-    visibility: visible
+    visibility: visible;
+    z-index: 90000 !important;
 }
 
 .btn .close,
@@ -1882,14 +2141,31 @@ margin-right: 5%;
 #cbi-travelmate-global>div>div.cbi-value:nth-child(odd),
 #cbi-travelmate-global>div:nth-child(3)>div:nth-child(2),
 #cbi-system-system>div>div>div:nth-child(odd),
-#cbi-dropbear-dropbear>div:nth-child(3)>div:nth-child(odd){
+#cbi-dropbear-dropbear>div:nth-child(3)>div:nth-child(odd),
+body[data-page="admin-network-network"]>#modal_overlay>.modal>.cbi-map>.cbi-section>div>div>.cbi-value:nth-child(odd),
+div[data-tab="general"]>div:nth-child(odd),
+div[data-tab="advanced"]>div:nth-child(odd),
+div[data-tab="ipv6"]>div:nth-child(odd),
+div[data-tab="ipv6-ra"]>div:nth-child(odd){
     background: #f5f5f5
 };
 
 #cbi-wivi-client>.cbi-value,
 #cbi-travelmate-global>div>div.cbi-value,
-#cbi-system-system>div>div>div.cbi-value{
+#cbi-system-system>div>div>div.cbi-value,
+div[data-tab="general"]>.cbi-value,
+div[data-tab="advanced"]>.cbi-value,
+div[data-tab="ipv6"]>div.cbi-value,
+div[data-tab="ipv6-ra"]>div.cbi-value{
     margin: 0 !important;
+}
+
+div[data-tab="general"]>.cbi-value>label,
+div[data-tab="advanced"]>.cbi-value>label,
+div[data-tab="ipv6"]>div.cbi-value>label,
+div[data-tab="ipv6-ra"]>div.cbi-value>label{
+    text-align: left !important;
+    padding-left: 6em;
 }
 
 #cbi-wivi > div:nth-child(3) > div.cbi-value,
@@ -2125,18 +2401,18 @@ body[data-page='admin-system-admin']>#maincontent>#view>div.cbi-page-actions>but
     white-space: nowrap;
     overflow: hidden;
     -o-text-overflow: ellipsis;
-       text-overflow: ellipsis;
+    text-overflow: ellipsis;
     -ms-flex-negative: 1;
-        flex-shrink: 1;
+    flex-shrink: 1;
     -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    -ms-grid-row-align: center;
+    align-self: center;
     color: inherit
 }
 
@@ -2164,7 +2440,9 @@ body[data-page='admin-system-admin']>#maincontent>#view>div.cbi-page-actions>but
 
 .cbi-dropdown>ul>li img {
     vertical-align: middle;
-    margin-right: .25em
+    margin-right: .25em;
+    height: 2em;
+    width: 2em;
 }
 
 .cbi-dropdown>ul>li>form>input[type="checkbox"] {
@@ -2180,16 +2458,17 @@ body[data-page='admin-system-admin']>#maincontent>#view>div.cbi-page-actions>but
     background: #fff;
     border: 1px solid #918e8c;
     -webkit-box-shadow: 0 0 4px #918e8c;
-            box-shadow: 0 0 4px #918e8c;
+    box-shadow: 0 0 4px #918e8c;
     position: absolute;
-    z-index: 1100;
+    z-index: 11100;
     max-width: none;
     min-width: 100%;
     width: auto;
     -webkit-transition: max-height .125s ease-in;
     -o-transition: max-height .125s ease-in;
     transition: max-height .125s ease-in;
-    overflow-y: auto
+    overflow-y: auto;
+    height: 200px;
 }
 
 .cbi-dropdown>ul>li[display],
@@ -2269,26 +2548,33 @@ select+.cbi-button,
 
 .cbi-tooltip {
     position: absolute;
-    z-index: 1000;
+    z-index:9000;
     left: -10000px;
-    -webkit-box-shadow: 0 0 2px var(--border-color-high);
-            box-shadow: 0 0 2px var(--border-color-high);
+    -webkit-box-shadow: 0 0 2px#666666;
+    box-shadow: 0 0 2px#666666;
     border-radius: 3px;
-    background: var(--background-color-high);
+    background: #ffffff;
     white-space: pre;
     opacity: 0;
     -webkit-transition: opacity .25s ease-in;
     -o-transition: opacity .25s ease-in;
     transition: opacity .25s ease-in;
-    padding: 2px 5px
+    padding: 2px 5px;
+
+
 }
 
 .cbi-tooltip-container:hover .cbi-tooltip:not(:empty) {
     left: auto;
-    opacity: 1;
+    opacity: 1;   
+background: #ffffff;
     -webkit-transition: opacity .25s ease-in;
     -o-transition: opacity .25s ease-in;
-    transition: opacity .25s ease-in
+    transition: opacity .25s ease-in;
+    height: fit-content;
+     -webkit-box-shadow: 0 0 2px#666666;
+    box-shadow: 0 0 2px#666666;
+    border-radius: 3px;
 }
 
 .cbi-progressbar {
@@ -2479,7 +2765,7 @@ input[type=submit].btn::-moz-focus-inner {
 
 .label,
 header [data-indicator] {
-    font-size: 9.75px;
+    font-size: 9px;
     font-weight: 700;
     color: var(--text-color-high);
     text-transform: uppercase;
@@ -2523,6 +2809,7 @@ form.inline {
 
 #syslog {
     width: 95%;
+    height: 60vh;
     color: #e5e5e5;
     background: #000000;
     margin: 1%;
@@ -2678,6 +2965,7 @@ th[data-sort-direction="desc"]::after {
 .cbi-value-description {
     position: relative;
     margin: .25em 0 0 1.25em;
+    font-size: .85em;
 }
 
 .cbi-value-description:not(:empty)::before {
@@ -2748,13 +3036,6 @@ th[data-sort-direction="desc"]::after {
     color: #f4f4f4;
 }
 
-[data-darkmode="true"] .zonebadge[style],
-[data-darkmode="true"] .ifacebox-head[style] {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(var(--zone-color-rgb), .4)), to(rgba(var(--zone-color-rgb), .3))) !important;
-    background: -o-linear-gradient(rgba(var(--zone-color-rgb), .4), rgba(var(--zone-color-rgb), .3)) !important;
-    background: linear-gradient(rgba(var(--zone-color-rgb), .4), rgba(var(--zone-color-rgb), .3)) !important
-}
-
 .ifacebox .ifacebox-body {
     padding: .25em
 }
@@ -2763,9 +3044,9 @@ th[data-sort-direction="desc"]::after {
     display: inline-block;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    white-space: wrap;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    white-space: break-spaces;
     border: 1px solid var(--border-color-high);
     background: -webkit-gradient(linear, left top, left bottom, from(var(--background-color-high)), color-stop(25%, var(--background-color-high)), to(var(--background-color-medium)));
     background: -o-linear-gradient(var(--background-color-high), var(--background-color-high) 25%, var(--background-color-medium));
@@ -2774,7 +3055,7 @@ th[data-sort-direction="desc"]::after {
     text-shadow: 0 1px 1px hsla(var(--background-color-high-hsl), 0.75);
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 0 hsla(var(--background-color-high-hsl), 0.05);
-            box-shadow: inset 0 1px 0 hsla(var(--background-color-high-hsl), 0.05);
+    box-shadow: inset 0 1px 0 hsla(var(--background-color-high-hsl), 0.05);
     cursor: default;
     line-height: 1.2em;
 } 
@@ -2941,7 +3222,7 @@ div.cbi-value var.cbi-tooltip-container,
 
 #modal_overlay>.modal.uci-dialog,
 #modal_overlay>.modal.cbi-modal {
-    max-width: 900px
+    max-width: 900px;
 }
 
 #modal_overlay>.modal.login>button.important {
@@ -3233,12 +3514,6 @@ ul,
     list-style: none
 }
 
-.pull-right,
-.actions .secondary-action,
-.cbi-page-actions .secondary-action {
-    float: right;
-}
-
 h1 small,
 h3,
 legend {
@@ -3338,7 +3613,7 @@ li.menu,
 .cbi-dropdown[open],
 select+.cbi-button,
 .cbi-select+.cbi-button {
-    position: relative
+    position: relative;
 }
 
 .tab-content>.tab-pane,
@@ -3439,25 +3714,25 @@ span.nowrap>strong{
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
     margin: 2% auto;
     background: rgb(254 254 254);
     border: solid 1px #8d8d8d;
     border-radius: 5px;
     -webkit-filter: drop-shadow(3px 4px 4px #8d8d8d);
-            filter: drop-shadow(3px 4px 4px #8d8d8d);
+    filter: drop-shadow(3px 4px 4px #8d8d8d);
     padding: 2% 0;
     min-width: 80%;
     width: 90%;
     -ms-flex-negative: 1;
-        flex-shrink: 1;
+    flex-shrink: 1;
 }
 
     body {
@@ -3519,6 +3794,12 @@ span.nowrap>strong{
     body {
         font-size: 1em !important;
     }
+
+    #cbi-wireless-wifi-device>table>tr>td.cbi-section-actions>div>button{
+    width: 4em !important;
+    margin: 0;
+}
+
 
 }
 
@@ -3613,22 +3894,22 @@ select{
     height: 28px;
 }
 
-    
-header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-}
-
 header a {
     font-size: .8rem;
 }
+
+div[data-tab="device"]>table>tr>td{
+    font-size: 1em !important;
+}
+
+       div[data-tab="device"]>table>tr>.cbi-section-actions>div{
+    display: flex;
+    flex-direction: row;
+}
+         div[data-tab="device"]>table>tr>.cbi-section-actions>div>button{
+    font-size: 1em !important;
+}
+
 
     
 }
@@ -3640,7 +3921,7 @@ header a {
     }
 
     .cbi-section {
-        max-width: 50em !important;
+        max-width: 47em !important;
         min-width: auto;
     }
 
@@ -3698,44 +3979,33 @@ header a {
   header > .brand {
     width: 100%;
     margin-left: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     max-width: -webkit-fit-content;
     max-width: -moz-fit-content;
     max-width: fit-content;
     position: relative;
-      left: 2vw;
+    left: -1vw;
   }
 
 #mobile-menu {
      margin-right: auto;
-     width:   40em;
-     max-width: 70em;
-     position: relative;
-     left: 1vw;
+     margin-left: 1em;
 }
 
   #brand-img {
     width: 14em;
-      vertical-align: top;
+    vertical-align: top;
 }
 
     
 header {
     position: absolute;
     left: 0;
-    right: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    gap: 2%;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
 }
 
 #cbi-wivi-client>.cbi-value,
@@ -3743,7 +4013,11 @@ header {
     margin: 1.25em 0 !important;
 }
 
-#cbi-system-system>div>div>div.cbi-value{
+#cbi-system-system>div>div>div.cbi-value,
+    div[data-tab="general"]>.cbi-value,
+div[data-tab="advanced"]>.cbi-value,
+div[data-tab="ipv6"]>div.cbi-value,
+div[data-tab="ipv6-ra"]>div.cbi-value{
     margin: 0 !important;
 }
 
@@ -3847,9 +4121,29 @@ footer span > *:nth-child(9){
         -ms-grid-column: 3;
 }
 
+div[data-tab="device"]>table>tr>td{
+    font-size: 120% !important;
+    display: flex;
+    flex: .5;
+    justify-content: center;
+}
 
+    #cbi-wireless-wifi-device{
+    margin-top: 5em !important;
+}
+
+#cbi-wireless-wifi-device>table>tr>td,
+     #cbi-wireless-wifi-device>table>tr>td>div>big {
+    font-size: 1rem !important;
+}
+
+    #cbi-wireless-wifi-device>table>tr>td.cbi-section-actions>div>button{
+    width: 4.5em !important;
+    margin: .35em !important;
+}
     
 }
+
 
 
 @-webkit-keyframes flash {
